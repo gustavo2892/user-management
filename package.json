@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "jest",
-    "coverage": "jest --coverage --collectCoverageFrom='src/**/*.{ts,tsx}'"
+    "coverage": "jest --coverage --collectCoverageFrom='src/**/*.{ts,tsx}'",
+    "server": "npx json-server --watch db.json --port 3001"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -18,6 +19,7 @@
     "@mui/icons-material": "^7.3.4",
     "@mui/material": "^7.3.4",
     "@reduxjs/toolkit": "^2.9.2",
+    "axios": "^1.13.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-redux": "^9.2.0"
@@ -42,6 +44,7 @@
     "jest": "^30.2.0",
     "jest-environment-jsdom": "^30.2.0",
     "jest-transform-stub": "^2.0.0",
+    "json-server": "1.0.0-beta.3",
     "ts-jest": "^29.4.5",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.45.0",

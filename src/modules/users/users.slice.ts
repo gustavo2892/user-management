@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import type { IUser } from "./users.types";
+import type { TUser } from "./users.types";
 
 interface IUserState {
-  users: IUser[];
+  users: TUser[];
 }
 
 const initialState: IUserState = {
@@ -14,15 +14,15 @@ const usersSlice = createSlice({
   name: "users",
   initialState,
   reducers: {
-    create: (state, action: PayloadAction<IUser>) => {
+    create: (state, action: PayloadAction<TUser>) => {
       // TODO Add create user
       state.users = [action.payload];
     },
-    update: (state, action: PayloadAction<IUser>) => {
+    update: (state, action: PayloadAction<TUser>) => {
       // TODO Add update user
       state.users = [action.payload];
     },
-    remove: (state, action: PayloadAction<IUser>) => {
+    remove: (state, action: PayloadAction<TUser>) => {
       // TODO Add remove user
       state.users = [action.payload];
     },
