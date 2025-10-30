@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { initReactI18next } from 'react-i18next';
-import { AppLocalStorage } from '../../../localStorage';
+import { AppLocalStorage } from '@/shared/localStorage';
 import i18n from 'i18next';
 import resources from '../../locales';
 
