@@ -1,0 +1,54 @@
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+
+import { list, remove } from "../../service/users.service";
+import type { TUser } from "../../users.types";
+import { setUsers } from "../../users.slice";
+import type { RootState } from "@/shared/redux/store";
+import { useAlert } from "@/shared/components";
+
+export const useUsersList = () => {
+  const queryClient = useQueryClient();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { alertInfo, showSuccess, showError, closeAlert } = useAlert();
+
+  const { data } = useQuery({
+    queryKey: ["users"],
+    queryFn: list,
+  });
+
+  const users = useSelector((state: RootState) => state.users.users);
+
+  useEffect(() => {
+    if (data) dispatch(setUsers(data));
+  }, [data, dispatch]);
+
+  const mutation = useMutation({
+    mutationFn: (user: TUser) => remove(user.id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["users"] });
+      showSuccess("Usuário deletado com sucesso!");
+    },
+    onError: (error: unknown) => {
+      const message = error instanceof Error ? error.message : String(error);
+      showError(`Erro ao deletar usuário: ${message}`);
+    },
+  });
+
+  const handleDelete = (user: TUser) => mutation.mutate(user);
+
+  const handleNavigate = (user: TUser) => {
+    navigate(`/users/${user.id}`);
+  };
+
+  return {
+    users,
+    alertInfo,
+    handleDelete,
+    handleNavigate,
+    handleCloseAlert: closeAlert,
+  };
+}

@@ -14,20 +14,20 @@ const usersSlice = createSlice({
   name: "users",
   initialState,
   reducers: {
-    create: (state, action: PayloadAction<TUser>) => {
-      // TODO Add create user
-      state.users = [action.payload];
+    setUsers(state, action: PayloadAction<TUser[]>) {
+      state.users = action.payload;
     },
-    update: (state, action: PayloadAction<TUser>) => {
-      // TODO Add update user
-      state.users = [action.payload];
+    updateUser(state, action: PayloadAction<TUser>) {
+      const idx = state.users.findIndex((u) => u.id === action.payload.id);
+      if (idx !== -1) {
+        state.users[idx] = action.payload;
+      }
     },
-    remove: (state, action: PayloadAction<TUser>) => {
-      // TODO Add remove user
-      state.users = [action.payload];
+    removeUser(state, action: PayloadAction<TUser["id"]>) {
+      state.users = state.users.filter((u) => u.id !== action.payload);
     },
   },
 });
 
-export const { create, update, remove } = usersSlice.actions;
+export const { setUsers, updateUser, removeUser } = usersSlice.actions;
 export default usersSlice.reducer;

@@ -1,16 +1,14 @@
-import { useMutation } from "@tanstack/react-query";
 import { UserForm } from "../../components/userForm/userForm";
-import type { TUserDTO } from "../../users.types";
-import { create } from "../../service/users.service";
+import { useUserCreate } from "./userCreate.hook";
+import { Alert } from "@/shared/components";
 
 export const UserCreate = () => {
-  const mutation = useMutation({
-    mutationFn: create,
-  });
+  const { alertInfo, handleCloseAlert, handleSubmit, isLoading } = useUserCreate();
 
-  const handleSubmit = (data: TUserDTO) => {
-    mutation.mutate(data)
-  }
-
-  return <UserForm handleSubmit={handleSubmit} isLoading={mutation.isPending} />;
+  return (
+    <>
+      <UserForm handleSubmit={handleSubmit} isLoading={isLoading} />
+      <Alert alertInfo={alertInfo} handleCloseAlert={handleCloseAlert} />
+    </>
+  );
 };
