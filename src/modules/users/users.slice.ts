@@ -2,11 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import type { TUser } from "./users.types";
 
-interface IUserState {
+type TUserState = {
   users: TUser[];
-}
+};
 
-const initialState: IUserState = {
+const initialState: TUserState = {
   users: [],
 };
 

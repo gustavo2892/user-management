@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import './App.css'
 import Button from '@mui/material/Button';
 
-function App() {
+export const AppModule = () => {
   const [count, setCount] = useState(0)
 
   return (
@@ -22,5 +21,3 @@ function App() {
     </>
   )
 }
-
-export default App
