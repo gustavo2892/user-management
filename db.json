@@ -1,5 +1,16 @@
 {
   "users": [
-    { "id": 1, "name": "test", "email": "teste@test.com", "status": "active" }
+    {
+      "name": "test34",
+      "email": "teste@test.com",
+      "status": "active",
+      "id": "1"
+    },
+    {
+      "id": "2bp7038",
+      "name": "Gustavo",
+      "email": "gustavo@email.com",
+      "status": "active"
+    }
   ]
 }

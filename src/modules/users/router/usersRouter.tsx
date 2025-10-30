@@ -1,15 +1,18 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import UserList from '../views/usersList/userList';
-import UserView from '../views/userView/userView';
+import {
+  UsersList,
+  UserCreate,
+  UserUpdate
+} from '../pages';
 
 export const UsersRouter: React.FC = () => (
   <Routes>
-    <Route path="/" element={<UserList />} />
-    <Route path="new" element={<UserView />} />
+    <Route path="/" element={<UsersList />} />
+    <Route path="new" element={<UserCreate />} />
     <Route
-      path=":id"
-      element={<UserView />}
+      path=":userId"
+      element={<UserUpdate />}
     />
     <Route path="*" element={<Navigate to="/" replace />} />
   </Routes>
