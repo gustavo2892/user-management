@@ -16,13 +16,13 @@ export default meta
 type Story = StoryObj<typeof Loading>
 
 /**
- * Story padrão — exibe o componente centralizado.
+ * Standard story — displays the component in the center.
  */
 export const Default: Story = {}
 
 /**
- * Story com texto de contexto — útil para visualizar como o Loading
- * aparece em uma tela com conteúdo adicional.
+ * Story with contextual text — useful for visualizing as a Loading
+ * It appears on a screen with additional content.
  */
 export const WithText: Story = {
   render: () => (
@@ -37,7 +37,7 @@ export const WithText: Story = {
       }}
     >
       <Loading />
-      <Typography variant="body1">Carregando dados...</Typography>
+      <Typography variant="body1">Loading data...</Typography>
     </Box>
   ),
 }
