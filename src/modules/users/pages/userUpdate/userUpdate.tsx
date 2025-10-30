@@ -18,7 +18,7 @@ export const UserUpdate = () => {
   });
 
   const handleSubmit = (data: TUserDTO) => {
-    mutation.mutate(data)
+    mutation.mutate(data);
   }
 
   return <UserForm handleSubmit={handleSubmit} userData={data} isLoading={isLoading} />;

@@ -11,6 +11,30 @@
       "name": "Gustavo",
       "email": "gustavo@email.com",
       "status": "active"
+    },
+    {
+      "id": "2bp7838",
+      "name": "Maria",
+      "email": "maria@email.com",
+      "status": "active"
+    },
+    {
+      "id": "2bp7833",
+      "name": "Pedro",
+      "email": "pedro@email.com",
+      "status": "active"
+    },
+    {
+      "id": "4bp7838",
+      "name": "Guilherme",
+      "email": "guilherme@email.com",
+      "status": "active"
+    },
+    {
+      "id": "3bp7838",
+      "name": "Helena",
+      "email": "helena@email.com",
+      "status": "inactive"
     }
   ]
 }
