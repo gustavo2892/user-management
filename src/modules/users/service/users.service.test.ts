@@ -46,10 +46,7 @@ test("create should send user data and return created user", async () => {
   } satisfies TUserDTO;
   const data = await create(payload);
 
-  expect(mockedApi.post).toHaveBeenCalledWith(
-    "/users",
-    expect.objectContaining(payload),
-  );
+  expect(mockedApi.post).toHaveBeenCalledWith("/users", expect.objectContaining(payload));
   expect(data).toEqual({ id: "abc123", name: "John" });
 });
 
