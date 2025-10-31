@@ -3,9 +3,11 @@ import TextField from "@mui/material/TextField";
 import { Controller, useFormContext } from "react-hook-form";
 
 import type { FormInputProps } from "./input.types";
+import { useI18n } from "@/shared/i18n";
 
 export const Input = ({ name, label, disabled = false }: FormInputProps) => {
   const { control } = useFormContext();
+  const { translate } = useI18n();
 
   return (
     <Controller
@@ -17,7 +19,7 @@ export const Input = ({ name, label, disabled = false }: FormInputProps) => {
             <TextField
               label={label}
               error={Boolean(fieldState.error)}
-              helperText={fieldState.error?.message}
+              helperText={translate(fieldState.error?.message ?? "")}
               disabled={disabled}
               {...field}
             />

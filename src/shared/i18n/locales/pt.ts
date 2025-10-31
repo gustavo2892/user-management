@@ -23,6 +23,7 @@ export const pt = {
   "users.table.delete.text":
     "Você tem certeza de que deseja excluir esta linha? Esta ação não pode ser desfeita.",
   "users.table.delete.title": "Confirmar Exclusão",
+  "users.table.pagination.label": "Linhas por página",
   "user.show.create.success": "Usuário criado com sucesso!",
   "user.show.create.update": "Usuário atualizado com sucesso!",
   "user.show.create.delete": "Usuário deletado com sucesso!",
@@ -37,4 +38,7 @@ export const pt = {
   "general.alert.error": "Erro",
   "general.alert.warning": "Aviso",
   "general.alert.info": "Informação",
+  "general.minLengthOf": "Tamanho mínimo deve ser 1",
+  "general.maxLengthOf": "Tamanho mánimo deve ser 50",
+  "general.wrongEmailFormat": "Formato de e-mail inválido",
 };

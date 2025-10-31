@@ -1,7 +1,7 @@
 # Painel de Gestão de Usuários
 
 Aplicação desenvolvida em **React + TypeScript** com **Vite**, seguindo os requisitos do desafio técnico.  
-O sistema permite **listar, filtrar, criar, editar e excluir usuários**, com validações, feedback visual, tema dark/light e testes automatizados.
+O sistema permite **listar, filtrar, criar, editar e excluir usuários**, com validações, feedback visual, tema dark/light.
 
 ## ✨ Tecnologias Utilizadas
 
@@ -26,10 +26,10 @@ O sistema permite **listar, filtrar, criar, editar e excluir usuários**, com va
 - UI acessível (a11y)
 - Sincronização automática de dados via React Query + Redux
 - ErrorBoundary customizado
-- Extra: sistema com 3 idiomas (Português, Inglês e Italiano)
 - GitHub Actions configurado para rodar os testes, validar eslint e gerar build
 - Storybook configurado e com alguns components
 - Possui o uso da memoização em lugares que julguei necessário
+- Extra: sistema com 3 idiomas (Português, Inglês e Italiano)
 
 ## 📦 Pré-requisitos
 

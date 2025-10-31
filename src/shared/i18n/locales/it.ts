@@ -23,6 +23,7 @@ export const it = {
   "users.table.delete.text":
     "Sei sicuro di voler eliminare questa riga? Questa azione non può essere annullata.",
   "users.table.delete.title": "Conferma Eliminazione",
+  "users.table.pagination.label": "Righe per pagina",
   "user.show.create.success": "Utente creato con successo!",
   "user.show.create.update": "Utente aggiornato con successo!",
   "user.show.create.delete": "Utente eliminato con successo!",
@@ -37,4 +38,7 @@ export const it = {
   "general.alert.error": "Errore",
   "general.alert.warning": "Avviso",
   "general.alert.info": "Informazione",
+  "general.minLengthOf": "La lunghezza minima deve essere di 1",
+  "general.maxLengthOf": "La lunghezza massima deve essere di 50",
+  "general.wrongEmailFormat": "Formato email non valido",
 };

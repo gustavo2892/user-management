@@ -238,6 +238,7 @@ export function Table<T extends { id?: number | string }>({
         count={sortedData.length}
         page={page}
         rowsPerPage={rowsPerPage}
+        labelRowsPerPage={translate("users.table.pagination.label")}
         onPageChange={(_, p) => {
           return setPage(p);
         }}

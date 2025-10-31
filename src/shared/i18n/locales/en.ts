@@ -23,6 +23,7 @@ export const en = {
   "users.table.delete.text":
     "Are you sure you want to delete this row? This action cannot be undone.",
   "users.table.delete.title": "Confirm Deletion",
+  "users.table.pagination.label": "Rows per page",
   "user.show.create.success": "User successfully created!",
   "user.show.create.update": "User successfully updated!",
   "user.show.create.delete": "User successfully deleted!",
@@ -37,4 +38,7 @@ export const en = {
   "general.alert.error": "Error",
   "general.alert.warning": "Warning",
   "general.alert.info": "Info",
+  "general.minLengthOf": "Minimum length should be 1",
+  "general.maxLengthOf": "Maximum length should be 50",
+  "general.wrongEmailFormat": "Invalid email format",
 };
