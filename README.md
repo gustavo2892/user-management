@@ -1,73 +1,113 @@
-# React + TypeScript + Vite
+# Painel de Gestão de Usuários
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação desenvolvida em **React + TypeScript** com **Vite**, seguindo os requisitos do desafio técnico.  
+O sistema permite **listar, filtrar, criar, editar e excluir usuários**, com validações, feedback visual, tema dark/light e testes automatizados.
 
-Currently, two official plugins are available:
+## ✨ Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+| Categoria               | Ferramentas                                     |
+| ----------------------- | ----------------------------------------------- |
+| Framework               | React + Vite + TypeScript                       |
+| UI/Design System        | Material UI (MUI) + Tema Dark/Light persistente |
+| Formulários & Validação | react-hook-form + zod                           |
+| Estado & Dados          | Redux Toolkit + React Query                     |
+| HTTP Client             | axios (baseURL configurável via `.env`)         |
+| Roteamento              | React Router Dom                                |
+| Testes                  | Jest + Testing Library (mocks tipados)          |
+| Qualidade               | ESLint (Flat Config) + Prettier                 |
+| Mock de API             | json-server                                     |
 
-## React Compiler
+## 🧾 Sobre o Sistema
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- CRUD completo de usuários
+- Listagem com ordenação, paginação e filtro
+- Formulário com validação e modo edição
+- Tema Dark/Light persistido
+- UI acessível (a11y)
+- Sincronização automática de dados via React Query + Redux
+- ErrorBoundary customizado
+- Extra: sistema com 3 idiomas (Português, Inglês e Italiano)
+- GitHub Actions configurado para rodar os testes, validar eslint e gerar build
+- Storybook configurado e com alguns components
+- Possui o uso da memoização em lugares que julguei necessário
 
-## Expanding the ESLint configuration
+## 📦 Pré-requisitos
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js **18+**
+- `pnpm` (recomendado) ou `npm`/`yarn`
+- Porta **3001** livre para o mock da API
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🔧 Configuração do Ambiente
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Crie um arquivo `.env` na raiz do projeto, caso necessário tem um env.example:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+VITE_REACT_APP_API=http://localhost:3001
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## ▶️ Como Rodar o Projeto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 1) Instalar dependências
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+pnpm install
+
+```
+
+### 2) Rodar aplicação + mock da API
+
+```
+pnpm dev
+
+```
+
+Frontend: http://localhost:5173  
+API mock: http://localhost:3001/users
+
+## 🧪 Testes
+
+```
+pnpm test
+
+```
+
+## 🧹 Lint e Formatação
+
+```
+pnpm lint
+pnpm lint:fix
+
+```
+
+## 📘 Storybook
+
+```
+pnpm storybook
+pnpm build-storybook
+
+```
+
+## 🏗 Build para Produção
+
+```
+pnpm build
+pnpm preview
+
+```
+
+## 📜 Scripts do Projeto
+
+```
+"dev": "concurrently \"pnpm vite\" \"pnpm mock\"",
+"build": "tsc -b && vite build",
+"lint": "eslint src --ext .ts,.tsx,.js,.jsx",
+"lint:fix": "eslint src --ext .ts,.tsx,.js,.jsx --fix",
+"preview": "vite preview",
+"test": "jest",
+"coverage": "jest --coverage --collectCoverageFrom='src/**/*.{ts,tsx}'",
+"mock": "json-server --watch db.json --port 3001",
+"storybook": "storybook dev -p 6006",
+"build-storybook": "storybook build"
+
 ```

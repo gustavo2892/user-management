@@ -1,5 +1,5 @@
 import React from "react";
-import { Home as HomeIcon, People as PeopleIcon, List as ListIcon } from "@mui/icons-material";
+import { People as PeopleIcon, List as ListIcon } from "@mui/icons-material";
 
 import { VerticalNav } from "../nav/nav";
 import { Header } from "../header/header";
@@ -10,7 +10,6 @@ import { Logo } from "../logo/logo";
 import { Box } from "@mui/material";
 
 const navItems: readonly NavItem[] = [
-  { label: "app.menu.home", to: "/", icon: <HomeIcon /> },
   {
     label: "app.menu.users",
     icon: <PeopleIcon />,
