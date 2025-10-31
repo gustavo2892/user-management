@@ -11,10 +11,11 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { useThemeMode } from "@/shared/theme/ThemeProvider";
 import { useI18n } from "@/shared/i18n/hooks";
+import { localeSelect } from "@/shared/i18n/locales";
 
 export const Header = () => {
   const { mode, toggleTheme } = useThemeMode();
-  const { locale, setLocale } = useI18n();
+  const { locale, setLocale, translate } = useI18n();
 
   return (
     <AppBar
@@ -27,11 +28,7 @@ export const Header = () => {
         zIndex: (t) => t.zIndex.drawer - 1,
       }}
     >
-      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Box sx={{ fontWeight: 600, fontSize: 18 }}>
-          Minha Aplicação
-        </Box>
-
+      <Toolbar sx={{ display: "flex", justifyContent: "flex-end" }}>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
 
           <IconButton onClick={toggleTheme} aria-label="Trocar tema">
@@ -46,9 +43,13 @@ export const Header = () => {
               onChange={(e) => setLocale(e.target.value as string)}
               sx={{ minWidth: 120 }}
             >
-              <MenuItem value="pt">Português</MenuItem>
-              <MenuItem value="en">Inglês</MenuItem>
-              <MenuItem value="it">Italiano</MenuItem>
+              {
+                localeSelect.map(({ value, label }) => {
+                  return (
+                    <MenuItem value={value} key={value} disabled={value === locale}>{translate(label)}</MenuItem>
+                  )
+                })
+              }
             </Select>
           </FormControl>
 

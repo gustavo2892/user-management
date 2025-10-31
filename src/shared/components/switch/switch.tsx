@@ -3,7 +3,7 @@ import { Switch as MUISwitch, FormControlLabel, FormHelperText, Box } from "@mui
 
 import type { SwitchProps } from "./switch.types";
 
-export const Switch = ({ name, label }: SwitchProps) => {
+export const Switch = ({ name, label, disabled = false }: SwitchProps) => {
   const { control } = useFormContext();
 
   return (
@@ -18,6 +18,7 @@ export const Switch = ({ name, label }: SwitchProps) => {
                 <MUISwitch
                   checked={Boolean(field.value)}
                   onChange={(e) => field.onChange(e.target.checked)}
+                  disabled={disabled}
                   color="primary"
                 />
               }

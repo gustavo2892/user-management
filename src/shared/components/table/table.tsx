@@ -28,6 +28,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { visuallyHidden } from "@mui/utils";
 
 import type { TableProps, Order } from "./table.types";
+import { useI18n } from "@/shared/i18n";
 
 const styleCell = {
   width: 100,
@@ -51,6 +52,7 @@ export function Table<T extends { id?: number | string }>({
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [openDialog, setOpenDialog] = useState(false);
   const [itemToDelete, setItemToDelete] = useState<T | null>(null);
+  const { translate } = useI18n();
 
   const distinctValues = useMemo(() => {
     const map: Record<string, string[]> = {};
@@ -132,7 +134,7 @@ export function Table<T extends { id?: number | string }>({
                       direction={orderBy === col.field ? order : "asc"}
                       onClick={() => handleSort(col.field)}
                     >
-                      {col.label}
+                      {translate(col.label)}
                       {orderBy === col.field && (
                         <Box component="span" sx={visuallyHidden}>
                           {order === "desc" ? "ordenado decrescente" : "ordenado crescente"}
@@ -140,11 +142,11 @@ export function Table<T extends { id?: number | string }>({
                       )}
                     </TableSortLabel>
                   ) : (
-                    col.label
+                    translate(col.label)
                   )}
                 </TableCell>
               ))}
-              {(onDelete || onNavigate) && <TableCell style={styleCell}>Ações</TableCell>}
+              {(onDelete || onNavigate) && <TableCell style={styleCell}>{translate('users.table.actions')}</TableCell>}
             </TableRow>
 
             {/* Filters */}
@@ -158,7 +160,7 @@ export function Table<T extends { id?: number | string }>({
                   <TableCell key={col.field} style={styleCell}>
                     {isSelect ? (
                       <FormControl fullWidth size="small">
-                        <InputLabel>{col.label}</InputLabel>
+                        <InputLabel>{translate(col.label)}</InputLabel>
                         <Select
                           label={col.label}
                           value={filters[col.field as string] ?? ""}
@@ -176,7 +178,7 @@ export function Table<T extends { id?: number | string }>({
                       <TextField
                         fullWidth
                         size="small"
-                        placeholder={`Filtrar ${col.label}`}
+                        placeholder={`${translate(col.label)}`}
                         value={filters[col.field as string] ?? ""}
                         onChange={(e) => handleFilterChange(col.field as string, e.target.value)}
                       />

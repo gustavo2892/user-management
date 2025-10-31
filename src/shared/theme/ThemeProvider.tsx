@@ -37,8 +37,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   const theme = useMemo(
     () =>
-      createTheme(tokens(mode)),
-    [mode]
+      createTheme(customTheme),
+    [customTheme]
   );
 
   return (

@@ -1,23 +1,28 @@
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 
 import { userFormSchema } from '../../schemas/userForm.schema';
 import { Input } from "@/shared/components/input/input";
-import { STATUSES, type TUser } from "../../users.types";
+import { ACTIVE_STATUS, INACTIVE_STATUS, type TUser, type TUserDTO } from "../../users.types";
+import { Switch } from "@/shared/components/switch/switch";
+import { useI18n } from "@/shared/i18n";
+import { endpoints } from "@/shared/api/endpoints";
+import { useNavigate } from "react-router-dom";
 
 type FormValues = z.infer<typeof userFormSchema>;
 
 type UserFormProps = {
-  handleSubmit: (data: FormValues) => void;
+  handleSubmit: (data: TUserDTO) => void;
   isLoading?: boolean;
   userData?: TUser;
 }
 
 export const UserForm = ({ handleSubmit, isLoading = false, userData = undefined }: UserFormProps) => {
+  const { translate } = useI18n();
+  const navigate = useNavigate();
   const methods = useForm({
     resolver: zodResolver(userFormSchema),
     criteriaMode: "all",
@@ -25,30 +30,41 @@ export const UserForm = ({ handleSubmit, isLoading = false, userData = undefined
     defaultValues: {
       name: "",
       email: "",
-      status: STATUSES[0],
+      status: true,
     },
   });
 
   if (userData) {
     methods.setValue("name", userData.name);
     methods.setValue("email", userData.email);
-    methods.setValue("status", userData.status);
+    methods.setValue("status", userData.status === ACTIVE_STATUS ? true : false);
   }
+
+  const handleCancel = () => {
+    navigate(`${endpoints.users}`);
+  };
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit((data: FormValues) => handleSubmit(data))}>
-        <Box marginY={2}>
-          <Typography variant="h6">Preencha os campos</Typography>
-
+      <form
+        onSubmit={methods.handleSubmit((data: FormValues) => {
+          const formattedUserData = {
+            ...data,
+            status: data.status ? ACTIVE_STATUS : INACTIVE_STATUS,
+          } satisfies TUserDTO;
+          handleSubmit(formattedUserData)
+        })}
+      >
+        <Box marginY={2} maxWidth={400}>
           <Box display="flex" flexDirection="column" gap={2} marginTop={3}>
-            <Input name="name" label="Nome" />
-            <Input name="email" label="Email" />
-            <Input name="status" label="Status" />
+            <Input name="name" label={translate('users.form.name')} disabled={isLoading} />
+            <Input name="email" label={translate('users.form.email')} disabled={isLoading} />
+            <Switch name="status" label={translate('users.form.status')} disabled={isLoading} />
           </Box>
 
           <Box display="flex" flexDirection="column" gap={2} marginTop={3}>
-            <Button type="submit" variant="contained" disabled={isLoading}>Salvar</Button>
+            <Button variant="outlined" onClick={() => handleCancel()} disabled={isLoading}>{translate('users.form.buttons.cancel')}</Button>
+            <Button type="submit" variant="contained" disabled={isLoading}>{translate('users.form.buttons.save')}</Button>
           </Box>
         </Box>
       </form>

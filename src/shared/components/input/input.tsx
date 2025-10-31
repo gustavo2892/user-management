@@ -4,7 +4,7 @@ import { Controller, useFormContext } from "react-hook-form";
 
 import type { FormInputProps } from "./input.types";
 
-export const Input = ({ name, label }: FormInputProps) => {
+export const Input = ({ name, label, disabled = false }: FormInputProps) => {
   const { control } = useFormContext();
 
   return (
@@ -18,6 +18,7 @@ export const Input = ({ name, label }: FormInputProps) => {
               label={label}
               error={Boolean(fieldState.error)}
               helperText={fieldState.error?.message}
+              disabled={disabled}
               {...field}
             />
           </Box>

@@ -8,6 +8,7 @@ import type { TUser } from "../../users.types";
 import { setUsers } from "../../users.slice";
 import type { RootState } from "@/shared/redux/store";
 import { useAlert } from "@/shared/components";
+import { endpoints } from "@/shared/api/endpoints";
 
 export const useUsersList = () => {
   const queryClient = useQueryClient();
@@ -41,7 +42,7 @@ export const useUsersList = () => {
   const handleDelete = (user: TUser) => mutation.mutate(user);
 
   const handleNavigate = (user: TUser) => {
-    navigate(`/users/${user.id}`);
+    navigate(`${endpoints.users}/${user.id}`);
   };
 
   return {

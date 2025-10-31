@@ -14,13 +14,13 @@ import { Container } from "./layout.styled";
 import { Logo } from '../logo/logo';
 
 const navItems: readonly NavItem[] = [
-  { label: "Início", to: "/", icon: <HomeIcon /> },
+  { label: "app.menu.home", to: "/", icon: <HomeIcon /> },
   {
-    label: "Usuários",
+    label: "app.menu.users",
     icon: <PeopleIcon />,
     children: [
-      { label: "Listar", to: `${endpoints.users}`, icon: <ListIcon /> },
-      { label: "Criar", to: `${endpoints.users}/new`, icon: <AddIcon /> },
+      { label: "app.menu.list", to: `${endpoints.users}`, icon: <ListIcon /> },
+      { label: "app.menu.create", to: `${endpoints.users}/new`, icon: <AddIcon /> },
     ],
   },
 ] as const;

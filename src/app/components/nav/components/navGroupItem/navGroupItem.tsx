@@ -6,11 +6,13 @@ import { useLocation } from "react-router-dom";
 import { isActive, isGroup } from "../../utils";
 import { NestedLeafItem } from "../nestedLeafItem/nestedLeafItem";
 import type { NavGroup } from "../../types";
+import { useI18n } from "@/shared/i18n";
 
 export function NavGroupItem({ item }: { item: NavGroup }) {
   const location = useLocation();
   const matched = item.children.some((child) => !isGroup(child) && isActive(child.to, location.pathname));
   const [open, setOpen] = React.useState<boolean>(matched);
+  const { translate } = useI18n();
 
   return (
     <>
@@ -18,11 +20,11 @@ export function NavGroupItem({ item }: { item: NavGroup }) {
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-haspopup="true"
-        aria-label={item.ariaLabel ?? item.label}
+        aria-label={item.ariaLabel ?? translate(item.label)}
         selected={matched}
       >
         {item.icon && <ListItemIcon sx={{ minWidth: 36 }}>{item.icon}</ListItemIcon>}
-        <ListItemText primary={item.label} />
+        <ListItemText primary={translate(item.label)} />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
 

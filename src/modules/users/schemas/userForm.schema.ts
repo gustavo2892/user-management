@@ -1,5 +1,4 @@
 import * as z from "zod";
-import { STATUSES } from "../users.types";
 
 export const userFormSchema = z
   .object({
@@ -8,6 +7,6 @@ export const userFormSchema = z
       .min(1, "O mínimo de caracteres é 1, por favor corrigir")
       .max(50, "O máximo de caracteres é 50, por favor corrigir"),
     email: z.email("Formato de email incorreto").min(1),
-    status: z.enum(STATUSES),
+    status: z.boolean(),
   })
   .required();
