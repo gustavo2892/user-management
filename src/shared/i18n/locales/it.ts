@@ -2,8 +2,14 @@ export const it = {
   "app.locale.pt": "Portoghese",
   "app.locale.en": "Inglese",
   "app.locale.it": "Italiano",
+  "app.menu.home": "Home",
+  "app.menu.users": "Utenti",
+  "app.menu.list": "Elenco",
+  "app.menu.create": "Crea",
 
-  "users.titleList": "Utenti",
+  "users.title.list": "Utenti",
+  "users.title.create": "Creare Utente",
+  "users.title.update": "Aggiornare Utente",
   "users.form.name": "Nome",
   "users.form.email": "Email",
   "users.form.status": "L'utente è attivo?",
@@ -14,8 +20,6 @@ export const it = {
   "users.table.status": "Stato",
   "users.table.actions": "Azioni",
 
-  "app.menu.home": "Home",
-  "app.menu.users": "Utenti",
-  "app.menu.list": "Elenco",
-  "app.menu.create": "Crea",
+  "shared.error.text": "Qualcosa è andato storto",
+  "shared.error.try.again": "Riprova",
 };

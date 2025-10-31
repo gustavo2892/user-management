@@ -81,8 +81,14 @@ export function Table<T extends { id?: number | string }>({
       columns.every((col) => {
         const filterValue = filters[col.field as string];
         if (!filterValue) return true;
-        const cellValue = String(row[col.field] ?? "").toLowerCase();
-        return cellValue.includes(filterValue.toLowerCase());
+
+        const value = row[col.field];
+
+        if (col.filterType === "select") {
+          return String(value) === filterValue;
+        }
+
+        return String(value ?? "").toLowerCase().includes(filterValue.toLowerCase());
       })
     );
   }, [data, filters, columns]);
@@ -121,7 +127,7 @@ export function Table<T extends { id?: number | string }>({
   };
 
   return (
-    <Paper aria-label={tableLabel} sx={{ p: 2 }}>
+    <Paper aria-label={tableLabel} sx={{ p: 1 }}>
       <TableContainer>
         <MUITable>
           <TableHead>

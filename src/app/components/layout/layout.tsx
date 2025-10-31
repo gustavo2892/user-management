@@ -12,6 +12,7 @@ import type { NavItem } from "../nav/types";
 import { endpoints } from "@/shared/api/endpoints";
 import { Container } from "./layout.styled";
 import { Logo } from '../logo/logo';
+import { Box } from "@mui/material";
 
 const navItems: readonly NavItem[] = [
   { label: "app.menu.home", to: "/", icon: <HomeIcon /> },
@@ -27,7 +28,19 @@ const navItems: readonly NavItem[] = [
 
 export function AppLayout({ children }: { children?: React.ReactNode }) {
   return (
-    <VerticalNav items={navItems} header={<Logo />} >
+    <VerticalNav
+      items={navItems}
+      header={
+        <Box
+          style={{ width: '100%', height: 60 }}
+          display="flex"
+          flex={1}
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Logo />
+        </Box>}
+    >
       <Header />
       <Container>
         {children}

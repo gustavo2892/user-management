@@ -10,7 +10,7 @@ export const UsersList = () => {
 
   return (
     <>
-      <PageTitle title={translate('users.titleList')} subTitle='Listagem de usuários' />
+      <PageTitle title={translate('users.title.list')} />
       <Table<TUser>
         data={users}
         columns={columns}

@@ -8,16 +8,8 @@ export const Container = styled(Box)`
 export const Title = styled(Typography)`
   font-style: normal;
   font-weight: normal;
-  font-size: 2.8rem;
+  font-size: 2rem;
   letter-spacing: 0.1rem;
   line-height: 3rem;
-  margin: 0;
-`;
-
-export const SubTitle = styled(Typography)`
-  font-style: italic;
-  font-weight: normal;
-  font-size: 1rem;
-  line-height: 1.5rem;
   margin: 0;
 `;
