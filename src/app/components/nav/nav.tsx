@@ -15,7 +15,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 export function VerticalNav({ items, header, width = DRAWER_WIDTH, children }: VerticalNavProps) {
   const drawerContent = (
     <Box role="navigation" sx={{ width, display: "flex", flexDirection: "column", height: "100%" }}>
-      <DrawerHeader>{header ?? <Box sx={{ fontWeight: 700 }}>Minha Aplicação</Box>}</DrawerHeader>
+      <DrawerHeader>{header ?? <Box sx={{ fontWeight: 700 }} />}</DrawerHeader>
       <List sx={{ py: 0, flex: 1, overflowY: "auto" }}>
         <NavList items={items} />
       </List>

@@ -1,14 +1,12 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
 
 import { create } from "../../service/users.service";
 import type { TUserDTO } from "../../users.types";
 import { useAlert } from "@/shared/components";
-import { endpoints } from "@/shared/api/endpoints";
+import type { UseModalCreateUserProps } from "./modalCreateUser.types";
 
-export const useUserCreate = () => {
+export const useModalCreateUser = ({ onCloseModal }: UseModalCreateUserProps) => {
   const queryClient = useQueryClient();
-  const navigate = useNavigate();
   const { alertInfo, showSuccess, showError, closeAlert } = useAlert();
 
   const mutation = useMutation({
@@ -16,7 +14,7 @@ export const useUserCreate = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["users"] });
       showSuccess("user.show.create.success");
-      navigate(`${endpoints.users}`);
+      onCloseModal();
     },
     onError: (error: unknown) => {
       const message = error instanceof Error ? error.message : String(error);

@@ -38,7 +38,7 @@ export function Table<T extends { id?: number | string }>({
   columns,
   tableLabel = "Tabela de dados",
   onDelete,
-  onNavigate,
+  onUpdate,
 }: TableProps<T>) {
   const [order, setOrder] = useState<Order>("asc");
   const [orderBy, setOrderBy] = useState<keyof T | null>(null);
@@ -147,7 +147,7 @@ export function Table<T extends { id?: number | string }>({
                   )}
                 </TableCell>
               ))}
-              {(onDelete || onNavigate) && <TableCell style={styleCell}>{translate('users.table.actions')}</TableCell>}
+              {(onDelete || onUpdate) && <TableCell style={styleCell}>{translate('users.table.actions')}</TableCell>}
             </TableRow>
 
             {/* Filters */}
@@ -188,7 +188,7 @@ export function Table<T extends { id?: number | string }>({
                 );
               })}
 
-              {(onDelete || onNavigate) && <TableCell />}
+              {(onDelete || onUpdate) && <TableCell />}
             </TableRow>
           </TableHead>
 
@@ -201,10 +201,10 @@ export function Table<T extends { id?: number | string }>({
                   </TableCell>
                 ))}
 
-                {(onDelete || onNavigate) && (
+                {(onDelete || onUpdate) && (
                   <TableCell>
-                    {onNavigate && (
-                      <IconButton onClick={() => onNavigate(row)}>
+                    {onUpdate && (
+                      <IconButton onClick={() => onUpdate(row)}>
                         <EditIcon />
                       </IconButton>
                     )}

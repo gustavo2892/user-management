@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 import { Collapse, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import { useLocation } from "react-router-dom";
@@ -11,7 +11,7 @@ import { useI18n } from "@/shared/i18n";
 export function NavGroupItem({ item }: { item: NavGroup }) {
   const location = useLocation();
   const matched = item.children.some((child) => !isGroup(child) && isActive(child.to, location.pathname));
-  const [open, setOpen] = React.useState<boolean>(matched);
+  const [open, setOpen] = useState<boolean>(matched);
   const { translate } = useI18n();
 
   return (

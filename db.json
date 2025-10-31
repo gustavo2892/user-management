@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "name": "test34",
+      "name": "test345",
       "email": "teste@test.com",
       "status": "active",
       "id": "1"
@@ -34,6 +34,12 @@
       "id": "3bp7838",
       "name": "Helena",
       "email": "helena@email.com",
+      "status": "inactive"
+    },
+    {
+      "id": "841hlk3",
+      "name": "Bruno",
+      "email": "b@email.com",
       "status": "inactive"
     }
   ]

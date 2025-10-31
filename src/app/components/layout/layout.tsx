@@ -3,7 +3,6 @@ import {
   Home as HomeIcon,
   People as PeopleIcon,
   List as ListIcon,
-  Add as AddIcon,
 } from "@mui/icons-material";
 
 import { VerticalNav } from "../nav/nav";
@@ -21,7 +20,6 @@ const navItems: readonly NavItem[] = [
     icon: <PeopleIcon />,
     children: [
       { label: "app.menu.list", to: `${endpoints.users}`, icon: <ListIcon /> },
-      { label: "app.menu.create", to: `${endpoints.users}/new`, icon: <AddIcon /> },
     ],
   },
 ] as const;

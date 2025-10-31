@@ -17,7 +17,7 @@ export const NavLeafItem = ({ item }: { item: NavLeaf }) => {
       selected={active}
       aria-current={active ? "page" : undefined}
       disabled={item.disabled}
-      aria-label={item.ariaLabel ?? item.label}
+      aria-label={item.ariaLabel ?? translate(item.label)}
       sx={{
         "&.Mui-selected": {
           bgcolor: (t) => (t.palette.mode === "light" ? "primary.main" : "primary.dark"),

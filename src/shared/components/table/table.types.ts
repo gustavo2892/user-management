@@ -16,7 +16,7 @@ export type TableProps<T> = {
   columns: readonly Column<T>[];
   tableLabel?: string;
   onDelete?: (row: T) => void;
-  onNavigate?: (id: T) => void;
+  onUpdate?: (id: T) => void;
 };
 
 export type Order = "asc" | "desc";
