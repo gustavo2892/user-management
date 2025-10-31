@@ -21,7 +21,7 @@ export const ErrorFallback = ({ error, resetErrorBoundary }: ErrorFallbackProps)
       }}
     >
       <Typography variant="h5" fontWeight={600}>
-        {translate('shared.error.text')} 😕
+        {translate("shared.error.text")} 😕
       </Typography>
 
       <Typography variant="body2" color="text.secondary" sx={{ maxWidth: 420 }}>
@@ -29,8 +29,8 @@ export const ErrorFallback = ({ error, resetErrorBoundary }: ErrorFallbackProps)
       </Typography>
 
       <Button variant="contained" onClick={resetErrorBoundary}>
-        {translate('shared.error.try.again')}
+        {translate("shared.error.try.again")}
       </Button>
     </Box>
   );
-}
+};

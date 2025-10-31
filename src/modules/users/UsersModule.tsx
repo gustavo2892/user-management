@@ -1,4 +1,4 @@
-import { UsersRouter } from './router/usersRouter';
+import { UsersRouter } from "./router/usersRouter";
 
 const UsersModule: React.FC = () => <UsersRouter />;
 

@@ -25,9 +25,7 @@ export const Switch = ({ name, label, disabled = false }: SwitchProps) => {
               label={label}
             />
 
-            {fieldState.error && (
-              <FormHelperText error>{fieldState.error.message}</FormHelperText>
-            )}
+            {fieldState.error && <FormHelperText error>{fieldState.error.message}</FormHelperText>}
           </Box>
         );
       }}

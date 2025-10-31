@@ -4,41 +4,41 @@ import {
   DialogActions,
   DialogContent,
   DialogContentText,
-  DialogTitle
-} from "@mui/material"
-import type { ConfirmDialogProps } from "./confirmDialog.types"
-import { useEffect } from "react"
-import { useI18n } from "@/shared/i18n"
+  DialogTitle,
+} from "@mui/material";
+import type { ConfirmDialogProps } from "./confirmDialog.types";
+import { useEffect } from "react";
+import { useI18n } from "@/shared/i18n";
 
 export const ConfirmDialog = ({
   openDialog,
   handleCloseDialog,
   handleConfirmDelete,
   textConfirm,
-  titleConfirm
+  titleConfirm,
 }: ConfirmDialogProps) => {
   const { translate } = useI18n();
-  const dialogTitleId = "confirm-dialog-title"
-  const dialogDescriptionId = "confirm-dialog-description"
+  const dialogTitleId = "confirm-dialog-title";
+  const dialogDescriptionId = "confirm-dialog-description";
 
   useEffect(() => {
-    if (!openDialog) return
+    if (!openDialog) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        event.preventDefault()
-        handleCloseDialog()
+        event.preventDefault();
+        handleCloseDialog();
       }
 
       if (event.key === "Enter") {
-        event.preventDefault()
-        handleConfirmDelete()
+        event.preventDefault();
+        handleConfirmDelete();
       }
-    }
+    };
 
-    window.addEventListener("keydown", handleKeyDown)
-    return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [openDialog, handleCloseDialog, handleConfirmDelete])
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [openDialog, handleCloseDialog, handleConfirmDelete]);
 
   return (
     <Dialog
@@ -49,18 +49,16 @@ export const ConfirmDialog = ({
     >
       <DialogTitle id={dialogTitleId}>{translate(titleConfirm)}</DialogTitle>
       <DialogContent>
-        <DialogContentText id={dialogDescriptionId}>
-          {translate(textConfirm)}
-        </DialogContentText>
+        <DialogContentText id={dialogDescriptionId}>{translate(textConfirm)}</DialogContentText>
       </DialogContent>
       <DialogActions>
         <Button onClick={handleCloseDialog} color="primary">
-          {translate('shared.error.dialog.cancel')}
+          {translate("shared.error.dialog.cancel")}
         </Button>
         <Button onClick={handleConfirmDelete} color="error" autoFocus>
-          {translate('shared.error.dialog.confirm')}
+          {translate("shared.error.dialog.confirm")}
         </Button>
       </DialogActions>
     </Dialog>
-  )
-}
+  );
+};

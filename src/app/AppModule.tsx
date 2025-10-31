@@ -1,4 +1,8 @@
-import { AppRouter } from './router/appRouter';
-import { AppLayout } from './components/layout/layout';
+import { AppRouter } from "./router/appRouter";
+import { AppLayout } from "./components/layout/layout";
 
-export const AppModule: React.FC = () => <AppLayout><AppRouter /></AppLayout>;
+export const AppModule: React.FC = () => (
+  <AppLayout>
+    <AppRouter />
+  </AppLayout>
+);

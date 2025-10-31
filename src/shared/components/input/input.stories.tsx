@@ -22,18 +22,13 @@ export default meta;
 
 type Story = StoryObj<typeof Input>;
 
-const FormWrapper = ({
-  defaultValues,
-}: {
-  defaultValues?: Partial<FormValues>;
-}) => {
+const FormWrapper = ({ defaultValues }: { defaultValues?: Partial<FormValues> }) => {
   const methods = useForm<FormValues>({
     defaultValues: defaultValues || { firstName: "" },
     mode: "onChange",
   });
 
-  const onSubmit: SubmitHandler<FormValues> = (data) =>
-    alert(JSON.stringify(data, null, 2));
+  const onSubmit: SubmitHandler<FormValues> = (data) => alert(JSON.stringify(data, null, 2));
 
   return (
     <FormProvider {...methods}>

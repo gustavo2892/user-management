@@ -10,7 +10,9 @@ import { useI18n } from "@/shared/i18n";
 
 export function NavGroupItem({ item }: { item: NavGroup }) {
   const location = useLocation();
-  const matched = item.children.some((child) => !isGroup(child) && isActive(child.to, location.pathname));
+  const matched = item.children.some(
+    (child) => !isGroup(child) && isActive(child.to, location.pathname),
+  );
   const [open, setOpen] = useState<boolean>(matched);
   const { translate } = useI18n();
 
@@ -35,7 +37,7 @@ export function NavGroupItem({ item }: { item: NavGroup }) {
               <NavGroupItem key={`group-${idx}-${child.label}`} item={child} />
             ) : (
               <NestedLeafItem key={`leaf-${child.to}`} item={child} />
-            )
+            ),
           )}
         </List>
       </Collapse>

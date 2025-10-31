@@ -7,10 +7,22 @@ export const HeaderCreateUser = ({ handleOpenModalCreate }: HeaderCreateUserProp
   const { translate } = useI18n();
 
   return (
-    <Paper sx={{ p: 2, marginBottom: 2, display: "flex", flexDirection: "row", justifyContent: "flex-end" }} >
-      <Button sx={{ color: "text.primary" }} onClick={() => handleOpenModalCreate()}>
-        {translate('users.title.create')}
+    <Paper
+      sx={{
+        p: 2,
+        marginBottom: 2,
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "flex-end",
+      }}
+    >
+      <Button
+        sx={{ color: "text.primary", borderColor: "text.primary" }}
+        variant="outlined"
+        onClick={() => handleOpenModalCreate()}
+      >
+        {translate("users.title.create")}
       </Button>
     </Paper>
-  )
-}
+  );
+};

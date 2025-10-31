@@ -30,4 +30,4 @@ export const useModalCreateUser = ({ onCloseModal }: UseModalCreateUserProps) =>
     alertInfo,
     handleCloseAlert: closeAlert,
   };
-}
+};

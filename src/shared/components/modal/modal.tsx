@@ -12,13 +12,7 @@ export type ModalProps = {
 
 export const Modal = ({ open, onClose, title, children, titleId }: ModalProps) => {
   return (
-    <Dialog
-      open={open}
-      onClose={onClose}
-      aria-labelledby={titleId}
-      fullWidth
-      maxWidth="sm"
-    >
+    <Dialog open={open} onClose={onClose} aria-labelledby={titleId} fullWidth maxWidth="sm">
       <DialogTitle
         id={titleId}
         sx={{
@@ -30,12 +24,7 @@ export const Modal = ({ open, onClose, title, children, titleId }: ModalProps) =
       >
         {title}
 
-        <IconButton
-          aria-label="Fechar"
-          onClick={onClose}
-          edge="end"
-          size="small"
-        >
+        <IconButton aria-label="Fechar" onClick={onClose} edge="end" size="small">
           <CloseIcon fontSize="small" />
         </IconButton>
       </DialogTitle>
@@ -45,4 +34,4 @@ export const Modal = ({ open, onClose, title, children, titleId }: ModalProps) =
       </DialogContent>
     </Dialog>
   );
-}
+};

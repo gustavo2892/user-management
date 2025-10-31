@@ -1,10 +1,7 @@
 import type { ModalProps } from "@/shared/components";
 import type { TUser } from "../../users.types";
 
-export type ModalUpdateUserProps = Omit<
-  ModalProps,
-  "title" | "children" | "titleId"
-> & {
+export type ModalUpdateUserProps = Omit<ModalProps, "title" | "children" | "titleId"> & {
   user: TUser | null;
 };
 

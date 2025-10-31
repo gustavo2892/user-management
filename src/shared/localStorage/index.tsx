@@ -1,1 +1,1 @@
-export { AppLocalStorage } from './appLocalStorage';
+export { AppLocalStorage } from "./appLocalStorage";

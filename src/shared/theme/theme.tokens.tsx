@@ -18,25 +18,25 @@ export const tokens = (mode: ThemeMode) => {
       },
       ...(mode === "dark"
         ? {
-          background: {
-            default: "#111111",
-            paper: "#1c1c1c",
-          },
-          text: {
-            primary: "#ffffff",
-            secondary: "#cccccc",
-          },
-        }
+            background: {
+              default: "#111111",
+              paper: "#1c1c1c",
+            },
+            text: {
+              primary: "#ffffff",
+              secondary: "#cccccc",
+            },
+          }
         : {
-          background: {
-            default: "#f7f9fc",
-            paper: "#ffffff",
-          },
-          text: {
-            primary: "#1a1a1a",
-            secondary: "#555555",
-          },
-        }),
+            background: {
+              default: "#f7f9fc",
+              paper: "#ffffff",
+            },
+            text: {
+              primary: "#1a1a1a",
+              secondary: "#555555",
+            },
+          }),
     },
 
     shape: {
@@ -62,5 +62,5 @@ export const tokens = (mode: ThemeMode) => {
         },
       },
     },
-  }
+  };
 };

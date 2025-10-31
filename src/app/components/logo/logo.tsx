@@ -13,4 +13,4 @@ export const Logo = () => {
       style={{ display: "block", margin: "auto", transition: "opacity .3s ease" }}
     />
   );
-}
+};

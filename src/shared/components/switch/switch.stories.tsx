@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { useForm, FormProvider, } from "react-hook-form";
+import { useForm, FormProvider } from "react-hook-form";
 import { Box } from "@mui/material";
 import { Switch } from "./switch";
 import type { SwitchProps } from "./switch.types";

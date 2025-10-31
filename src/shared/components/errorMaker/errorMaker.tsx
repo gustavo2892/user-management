@@ -1,5 +1,5 @@
-import { Button } from '@mui/material';
-import { useState } from 'react';
+import { Button } from "@mui/material";
+import { useState } from "react";
 
 export const ErrorMaker = () => {
   const [shouldError, setShouldError] = useState(false);
@@ -9,7 +9,7 @@ export const ErrorMaker = () => {
   };
 
   if (shouldError) {
-    throw new Error('Ops! Um erro de teste ocorreu intencionalmente.');
+    throw new Error("Ops! Um erro de teste ocorreu intencionalmente.");
   }
 
   return (

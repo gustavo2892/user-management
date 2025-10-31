@@ -1,11 +1,11 @@
-import { Table, Alert, PageTitle } from '@/shared/components';
+import { Table, Alert, PageTitle } from "@/shared/components";
 import type { TUser } from "../../users.types";
 import { columns } from "./usersList.constants";
 import { useUsersList } from "./usersList.hook";
-import { useI18n } from '@/shared/i18n';
-import { ModalUpdateUser } from '../../components/modalUpdateUser/modalUpdateUser';
+import { useI18n } from "@/shared/i18n";
+import { ModalUpdateUser } from "../../components/modalUpdateUser/modalUpdateUser";
 import { ModalCreateUser } from "../../components/modalCreateUser/modalCreateUser";
-import { HeaderCreateUser } from '../../components/headerCreateUser/headerCreateUser';
+import { HeaderCreateUser } from "../../components/headerCreateUser/headerCreateUser";
 
 export const UsersList = () => {
   const {
@@ -19,13 +19,13 @@ export const UsersList = () => {
     userUpdate,
     handleOpenModalCreate,
     handleCloseModalCreate,
-    openModalCreate
+    openModalCreate,
   } = useUsersList();
   const { translate } = useI18n();
 
   return (
     <>
-      <PageTitle title={translate('users.title.list')} />
+      <PageTitle title={translate("users.title.list")} />
       <HeaderCreateUser handleOpenModalCreate={handleOpenModalCreate} />
       <Table<TUser>
         data={users}

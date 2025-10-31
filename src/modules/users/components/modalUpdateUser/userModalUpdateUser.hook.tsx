@@ -33,4 +33,4 @@ export const useModalUpdateUser = ({ user, onCloseModal }: UseModalUpdateUserPro
     alertInfo,
     handleCloseAlert: closeAlert,
   };
-}
+};

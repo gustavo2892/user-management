@@ -1,12 +1,4 @@
-import {
-  AppBar,
-  Toolbar,
-  Box,
-  IconButton,
-  Select,
-  MenuItem,
-  FormControl,
-} from "@mui/material";
+import { AppBar, Toolbar, Box, IconButton, Select, MenuItem, FormControl } from "@mui/material";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { useThemeMode } from "@/shared/theme/ThemeProvider";
@@ -30,7 +22,6 @@ export const Header = () => {
     >
       <Toolbar sx={{ display: "flex", justifyContent: "flex-end" }}>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-
           <IconButton onClick={toggleTheme} aria-label="Trocar tema">
             {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
           </IconButton>
@@ -43,18 +34,17 @@ export const Header = () => {
               onChange={(e) => setLocale(e.target.value as string)}
               sx={{ minWidth: 120 }}
             >
-              {
-                localeSelect.map(({ value, label }) => {
-                  return (
-                    <MenuItem value={value} key={value} disabled={value === locale}>{translate(label)}</MenuItem>
-                  )
-                })
-              }
+              {localeSelect.map(({ value, label }) => {
+                return (
+                  <MenuItem value={value} key={value} disabled={value === locale}>
+                    {translate(label)}
+                  </MenuItem>
+                );
+              })}
             </Select>
           </FormControl>
-
         </Box>
       </Toolbar>
     </AppBar>
   );
-}
+};

@@ -22,7 +22,9 @@ export const NavLeafItem = ({ item }: { item: NavLeaf }) => {
         "&.Mui-selected": {
           bgcolor: (t) => (t.palette.mode === "light" ? "primary.main" : "primary.dark"),
           color: "primary.contrastText",
-          "&:hover": { bgcolor: (t) => (t.palette.mode === "light" ? "primary.dark" : "primary.main") },
+          "&:hover": {
+            bgcolor: (t) => (t.palette.mode === "light" ? "primary.dark" : "primary.main"),
+          },
         },
       }}
     >
@@ -30,4 +32,4 @@ export const NavLeafItem = ({ item }: { item: NavLeaf }) => {
       <ListItemText primary={translate(item.label)} />
     </ListItemButton>
   );
-}
+};

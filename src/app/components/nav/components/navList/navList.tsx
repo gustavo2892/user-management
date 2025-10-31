@@ -13,7 +13,7 @@ export function NavList({ items }: { items: readonly NavItem[] }) {
           <NavGroupItem key={`group-${idx}-${item.label}`} item={item} />
         ) : (
           <NavLeafItem key={`leaf-${item.to}`} item={item} />
-        )
+        ),
       )}
     </Fragment>
   );

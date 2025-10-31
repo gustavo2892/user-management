@@ -12,7 +12,7 @@ type ThemeContextValue = {
 
 const ThemeContext = createContext<ThemeContextValue>({
   mode: "light",
-  toggleTheme: () => { },
+  toggleTheme: () => {},
 });
 
 const localThemeStorage = AppLocalStorage.getItem(THEME_STORAGE_KEY);
@@ -26,8 +26,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     return (localThemeStorage as ThemeMode) ?? "light";
   });
 
-  const toggleTheme = () =>
-    setMode((prev) => (prev === "light" ? "dark" : "light"));
+  const toggleTheme = () => setMode((prev) => (prev === "light" ? "dark" : "light"));
 
   useEffect(() => {
     AppLocalStorage.setItem(THEME_STORAGE_KEY, mode);
@@ -35,11 +34,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   const customTheme = useMemo(() => tokens(mode), [mode]);
 
-  const theme = useMemo(
-    () =>
-      createTheme(customTheme),
-    [customTheme]
-  );
+  const theme = useMemo(() => createTheme(customTheme), [customTheme]);
 
   return (
     <ThemeContext.Provider value={{ mode, toggleTheme }}>

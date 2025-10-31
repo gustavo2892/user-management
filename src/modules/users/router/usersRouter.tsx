@@ -1,8 +1,6 @@
-import type { FC } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
-import {
-  UsersList,
-} from '../pages';
+import type { FC } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { UsersList } from "../pages";
 
 export const UsersRouter: FC = () => (
   <Routes>
@@ -10,4 +8,3 @@ export const UsersRouter: FC = () => (
     <Route path="*" element={<Navigate to="/" replace />} />
   </Routes>
 );
-

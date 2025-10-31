@@ -9,9 +9,7 @@ export const list = () => {
 };
 
 export const getById = (id: TUser["id"]) => {
-  const response = api
-    .get<TUser>(`${endpoints.users}/${id}`)
-    .then((res) => res.data);
+  const response = api.get<TUser>(`${endpoints.users}/${id}`).then((res) => res.data);
 
   return response;
 };
@@ -19,25 +17,19 @@ export const getById = (id: TUser["id"]) => {
 export const create = (data: TUserDTO) => {
   // This ID would not be used in a real project, as the database would create the ID.
   const id = Math.random().toString(36).substring(2, 9);
-  const response = api
-    .post<TUser>(endpoints.users, { id, ...data })
-    .then((res) => res.data);
+  const response = api.post<TUser>(endpoints.users, { id, ...data }).then((res) => res.data);
 
   return response;
 };
 
 export const update = (id: TUser["id"], data: TUserDTO) => {
-  const response = api
-    .put<TUser>(`${endpoints.users}/${id}`, data)
-    .then((res) => res.data);
+  const response = api.put<TUser>(`${endpoints.users}/${id}`, data).then((res) => res.data);
 
   return response;
 };
 
 export const remove = (id: TUser["id"]) => {
-  const response = api
-    .delete<never>(`${endpoints.users}/${id}`)
-    .then((res) => res.data);
+  const response = api.delete<never>(`${endpoints.users}/${id}`).then((res) => res.data);
 
   return response;
 };

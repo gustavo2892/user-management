@@ -30,7 +30,7 @@ const styleCell = {
   maxWidth: 100,
   overflow: "hidden",
   textOverflow: "ellipsis",
-  borderStyle: "border-box"
+  borderStyle: "border-box",
 };
 
 export function Table<T extends { id?: number | string }>({
@@ -83,8 +83,10 @@ export function Table<T extends { id?: number | string }>({
           return String(value) === filterValue;
         }
 
-        return String(value ?? "").toLowerCase().includes(filterValue.toLowerCase());
-      })
+        return String(value ?? "")
+          .toLowerCase()
+          .includes(filterValue.toLowerCase());
+      }),
     );
   }, [data, filters, columns]);
 
@@ -147,7 +149,9 @@ export function Table<T extends { id?: number | string }>({
                   )}
                 </TableCell>
               ))}
-              {(onDelete || onUpdate) && <TableCell style={styleCell}>{translate('users.table.actions')}</TableCell>}
+              {(onDelete || onUpdate) && (
+                <TableCell style={styleCell}>{translate("users.table.actions")}</TableCell>
+              )}
             </TableRow>
 
             {/* Filters */}
@@ -155,7 +159,7 @@ export function Table<T extends { id?: number | string }>({
               {columns.map((col) => {
                 if (!col.filterable) return <TableCell key={col.field} style={styleCell} />;
 
-                const isSelect = col.filterType === "select"
+                const isSelect = col.filterType === "select";
 
                 return (
                   <TableCell key={col.field} style={styleCell}>
@@ -167,7 +171,7 @@ export function Table<T extends { id?: number | string }>({
                           value={filters[col.field as string] ?? ""}
                           onChange={(e) => handleFilterChange(col.field as string, e.target.value)}
                         >
-                          <MenuItem value="">{translate('users.table.all')}</MenuItem>
+                          <MenuItem value="">{translate("users.table.all")}</MenuItem>
                           {distinctValues[col.field as string]?.map((val) => (
                             <MenuItem key={val} value={val}>
                               {val}
@@ -235,7 +239,7 @@ export function Table<T extends { id?: number | string }>({
         page={page}
         rowsPerPage={rowsPerPage}
         onPageChange={(_, p) => {
-          return setPage(p)
+          return setPage(p);
         }}
         onRowsPerPageChange={(e) => {
           setRowsPerPage(parseInt(e.target.value, 10));

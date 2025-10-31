@@ -17,16 +17,11 @@ export class AppLocalStorage {
     localStorage.removeItem(key);
   }
 
-  static setItem = <T extends keyof TAppLocalStorage>(
-    key: T,
-    value: TAppLocalStorage[T]
-  ) => {
+  static setItem = <T extends keyof TAppLocalStorage>(key: T, value: TAppLocalStorage[T]) => {
     localStorage.setItem(key, JSON.stringify(value));
   };
 
-  static getItem = <T extends keyof TAppLocalStorage>(
-    key: T
-  ): TAppLocalStorage[T] | undefined => {
+  static getItem = <T extends keyof TAppLocalStorage>(key: T): TAppLocalStorage[T] | undefined => {
     const value = localStorage.getItem(key);
     try {
       return value ? JSON.parse(value) : undefined;

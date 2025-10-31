@@ -70,6 +70,6 @@ export const useUsersList = () => {
     userUpdate,
     handleOpenModalCreate,
     handleCloseModalCreate,
-    openModalCreate
+    openModalCreate,
   };
-}
+};
