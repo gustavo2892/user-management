@@ -23,9 +23,18 @@ export const it = {
   "users.table.delete.text":
     "Sei sicuro di voler eliminare questa riga? Questa azione non può essere annullata.",
   "users.table.delete.title": "Conferma Eliminazione",
+  "user.show.create.success": "Utente creato con successo!",
+  "user.show.create.update": "Utente aggiornato con successo!",
+  "user.show.create.delete": "Utente eliminato con successo!",
 
   "shared.error.text": "Qualcosa è andato storto",
   "shared.error.try.again": "Riprova",
   "shared.error.dialog.cancel": "Annulla",
   "shared.error.dialog.confirm": "Conferma",
+
+  "general.error": "Errore nella richiesta: {{message}}",
+  "general.alert.success": "Successo",
+  "general.alert.error": "Errore",
+  "general.alert.warning": "Avviso",
+  "general.alert.info": "Informazione",
 };

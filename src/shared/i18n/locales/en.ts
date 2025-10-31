@@ -23,9 +23,18 @@ export const en = {
   "users.table.delete.text":
     "Are you sure you want to delete this row? This action cannot be undone.",
   "users.table.delete.title": "Confirm Deletion",
+  "user.show.create.success": "User successfully created!",
+  "user.show.create.update": "User successfully updated!",
+  "user.show.create.delete": "User successfully deleted!",
 
   "shared.error.text": "Something went wrong",
   "shared.error.try.again": "Try Again",
   "shared.error.dialog.cancel": "Cancel",
   "shared.error.dialog.confirm": "Confirm",
+
+  "general.error": "Request error: {{message}}",
+  "general.alert.success": "Success",
+  "general.alert.error": "Error",
+  "general.alert.warning": "Warning",
+  "general.alert.info": "Info",
 };

@@ -31,11 +31,11 @@ export const useUsersList = () => {
     mutationFn: (user: TUser) => remove(user.id),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["users"] });
-      showSuccess("Usuário deletado com sucesso!");
+      showSuccess("user.show.create.delete");
     },
     onError: (error: unknown) => {
       const message = error instanceof Error ? error.message : String(error);
-      showError(`Erro ao deletar usuário: ${message}`);
+      showError(message);
     },
   });
 

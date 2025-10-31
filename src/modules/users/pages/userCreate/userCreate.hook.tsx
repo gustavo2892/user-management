@@ -15,12 +15,12 @@ export const useUserCreate = () => {
     mutationFn: (data: TUserDTO) => create(data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["users"] });
-      showSuccess("Usuário criado com sucesso!");
+      showSuccess("user.show.create.success");
       navigate(`${endpoints.users}`);
     },
     onError: (error: unknown) => {
       const message = error instanceof Error ? error.message : String(error);
-      showError(`Erro ao criar usuário: ${message}`);
+      showError(message);
     },
   });
 

@@ -23,9 +23,18 @@ export const pt = {
   "users.table.delete.text":
     "Você tem certeza de que deseja excluir esta linha? Esta ação não pode ser desfeita.",
   "users.table.delete.title": "Confirmar Exclusão",
+  "user.show.create.success": "Usuário criado com sucesso!",
+  "user.show.create.update": "Usuário atualizado com sucesso!",
+  "user.show.create.delete": "Usuário deletado com sucesso!",
 
   "shared.error.text": "Algo deu errado",
   "shared.error.try.again": "Tentar Novamente",
   "shared.error.dialog.cancel": "Cancelar",
   "shared.error.dialog.confirm": "Confirmar",
+
+  "general.error": "Erro na solicitação: {{message}}",
+  "general.alert.success": "Sucesso",
+  "general.alert.error": "Erro",
+  "general.alert.warning": "Aviso",
+  "general.alert.info": "Informação",
 };

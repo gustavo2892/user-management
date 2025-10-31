@@ -22,13 +22,13 @@ export const useUserUpdate = () => {
     mutationFn: (userDTO: TUserDTO) => update(userId ?? "", userDTO),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["users"] });
-      showSuccess("Usuário atualizado com sucesso!");
+      showSuccess("user.show.create.update");
 
       navigate(`${endpoints.users}`);
     },
     onError: (error: unknown) => {
       const message = error instanceof Error ? error.message : String(error);
-      showError(`Erro ao atualizar usuário: ${message}`);
+      showError(message);
     },
   });
 
