@@ -19,7 +19,13 @@ export const it = {
   "users.table.email": "Email",
   "users.table.status": "Stato",
   "users.table.actions": "Azioni",
+  "users.table.all": "Tutto",
+  "users.table.delete.text":
+    "Sei sicuro di voler eliminare questa riga? Questa azione non può essere annullata.",
+  "users.table.delete.title": "Conferma Eliminazione",
 
   "shared.error.text": "Qualcosa è andato storto",
   "shared.error.try.again": "Riprova",
+  "shared.error.dialog.cancel": "Annulla",
+  "shared.error.dialog.confirm": "Conferma",
 };

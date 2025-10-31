@@ -19,7 +19,13 @@ export const en = {
   "users.table.email": "Email",
   "users.table.status": "Status",
   "users.table.actions": "Actions",
+  "users.table.all": "All",
+  "users.table.delete.text":
+    "Are you sure you want to delete this row? This action cannot be undone.",
+  "users.table.delete.title": "Confirm Deletion",
 
   "shared.error.text": "Something went wrong",
   "shared.error.try.again": "Try Again",
+  "shared.error.dialog.cancel": "Cancel",
+  "shared.error.dialog.confirm": "Confirm",
 };

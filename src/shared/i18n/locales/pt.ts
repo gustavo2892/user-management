@@ -19,7 +19,13 @@ export const pt = {
   "users.table.email": "Email",
   "users.table.status": "Status",
   "users.table.actions": "Ações",
+  "users.table.all": "Todos",
+  "users.table.delete.text":
+    "Você tem certeza de que deseja excluir esta linha? Esta ação não pode ser desfeita.",
+  "users.table.delete.title": "Confirmar Exclusão",
 
   "shared.error.text": "Algo deu errado",
   "shared.error.try.again": "Tentar Novamente",
+  "shared.error.dialog.cancel": "Cancelar",
+  "shared.error.dialog.confirm": "Confirmar",
 };

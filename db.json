@@ -35,12 +35,6 @@
       "name": "Helena",
       "email": "helena@email.com",
       "status": "inactive"
-    },
-    {
-      "id": "1stlzkt",
-      "name": "Teste 56 t",
-      "email": "teste56@teste.com",
-      "status": "active"
     }
   ]
 }

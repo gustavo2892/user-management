@@ -16,12 +16,6 @@ import {
   MenuItem,
   InputLabel,
   FormControl,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogContentText,
-  DialogActions,
-  Button,
 } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -29,6 +23,7 @@ import { visuallyHidden } from "@mui/utils";
 
 import type { TableProps, Order } from "./table.types";
 import { useI18n } from "@/shared/i18n";
+import { ConfirmDialog } from "../confirmDialog/confirmDialog";
 
 const styleCell = {
   width: 100,
@@ -172,7 +167,7 @@ export function Table<T extends { id?: number | string }>({
                           value={filters[col.field as string] ?? ""}
                           onChange={(e) => handleFilterChange(col.field as string, e.target.value)}
                         >
-                          <MenuItem value="">Todos</MenuItem>
+                          <MenuItem value="">{translate('users.table.all')}</MenuItem>
                           {distinctValues[col.field as string]?.map((val) => (
                             <MenuItem key={val} value={val}>
                               {val}
@@ -225,22 +220,13 @@ export function Table<T extends { id?: number | string }>({
           </TableBody>
         </MUITable>
 
-        <Dialog open={openDialog} onClose={handleCloseDialog}>
-          <DialogTitle>Confirm Deletion</DialogTitle>
-          <DialogContent>
-            <DialogContentText>
-              Are you sure you want to delete this row? This action cannot be undone.
-            </DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handleCloseDialog} color="primary">
-              Cancel
-            </Button>
-            <Button onClick={handleConfirmDelete} color="error" autoFocus>
-              Delete
-            </Button>
-          </DialogActions>
-        </Dialog>
+        <ConfirmDialog
+          handleCloseDialog={handleCloseDialog}
+          handleConfirmDelete={handleConfirmDelete}
+          titleConfirm="users.table.delete.title"
+          textConfirm="users.table.delete.text"
+          openDialog={openDialog}
+        />
       </TableContainer>
 
       <TablePagination

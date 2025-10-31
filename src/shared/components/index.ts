@@ -5,6 +5,7 @@ export * from "./table/table";
 export * from "./alert/alert";
 export * from "./pageTitle/pageTitle";
 export * from "./errorMaker/errorMaker";
+export * from "./confirmDialog/confirmDialog";
 
 /* Types */
 export * from "./table/table.types";
