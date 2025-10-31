@@ -2,10 +2,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { Controller, useFormContext } from "react-hook-form";
 
-type FormInputProps = {
-  name: string;
-  label: string;
-};
+import type { FormInputProps } from "./input.types";
 
 export const Input = ({ name, label }: FormInputProps) => {
   const { control } = useFormContext();

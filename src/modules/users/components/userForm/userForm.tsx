@@ -38,8 +38,8 @@ export const UserForm = ({ handleSubmit, isLoading = false, userData = undefined
   return (
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit((data: FormValues) => handleSubmit(data))}>
-        <Box marginY={10}>
-          <Typography variant="h6">Dados Pessoais</Typography>
+        <Box marginY={2}>
+          <Typography variant="h6">Preencha os campos</Typography>
 
           <Box display="flex" flexDirection="column" gap={2} marginTop={3}>
             <Input name="name" label="Nome" />
