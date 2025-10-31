@@ -19,6 +19,9 @@ export const useUsersList = () => {
   const { data } = useQuery({
     queryKey: ["users"],
     queryFn: list,
+    staleTime: 1000 * 60 * 2,
+    refetchOnWindowFocus: true,
+    refetchOnReconnect: true,
   });
 
   const users = useSelector((state: RootState) => state.users.users);

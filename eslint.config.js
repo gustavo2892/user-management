@@ -31,7 +31,12 @@ export default defineConfig([
 
     rules: {
       "react-refresh/only-export-components": "off",
-      "prettier/prettier": "error",
+      "prettier/prettier": [
+        "error",
+        {
+          endOfLine: "auto",
+        },
+      ],
     },
   },
 ]);
