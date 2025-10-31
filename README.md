@@ -1,5 +1,7 @@
 # Painel de Gestão de Usuários
 
+<img width="1913" height="512" alt="image" src="https://github.com/user-attachments/assets/0ee27e50-51f1-4380-9500-6d0dc3406646" />
+
 Aplicação desenvolvida em **React + TypeScript** com **Vite**, seguindo os requisitos do desafio técnico.  
 O sistema permite **listar, filtrar, criar, editar e excluir usuários**, com validações, feedback visual, tema dark/light.
 
@@ -114,7 +116,7 @@ pnpm preview
 
 ## 💡 Deploy
 
-O deploy foi feito na Vercel e pode ser conferido [aqui](https://user-management-zucchetti.vercel.app/users)!_ O único porém é que a versão públicada não está integrada a nenhum backend, entao essa versão é mais para efeito de visualização, a versão funcional é a que roda em ambiente local.
+O deploy foi feito na Vercel e pode ser conferido [aqui](user-management-zucchetti.vercel.app)!_ O único porém é que a versão públicada não está integrada a nenhum backend, entao essa versão é mais para efeito de visualização, a versão funcional é a que roda em ambiente local.
 
 ## 😔 O que faltou?
 
