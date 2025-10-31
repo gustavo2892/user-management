@@ -111,3 +111,15 @@ pnpm preview
 "build-storybook": "storybook build"
 
 ```
+
+## 💡 Deploy
+
+O deploy foi feito na Vercel e pode ser conferido [aqui](https://user-management-zucchetti.vercel.app/users)!_ O único porém é que a versão públicada não está integrada a nenhum backend, entao essa versão é mais para efeito de visualização, a versão funcional é a que roda em ambiente local.
+
+## 😔 O que faltou?
+
+Faltou avançar nos testes em geral.
+
+## ✅ Observações finais
+
+Qualquer dúvida estou a disposição.
